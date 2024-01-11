@@ -1,6 +1,10 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const reloadButtom = document.querySelector('.reload-buttom');
+const points = document.querySelector('.points');
+
+let point = 0;
+let canCountPoint = true;
 
 const marioJump = () => {
     mario.classList.add('mario-jump');
@@ -27,6 +31,16 @@ const loop = setInterval(() => {
         reloadButtom.style.display = 'initial';
 
         clearInterval(loop);
+    }
+
+    if (pipePosition <= 120 && pipePosition >= 110 && canCountPoint && marioPosition > 70) {
+        point++;
+        points.innerHTML = point;
+        canCountPoint = false;
+    }
+
+    if (pipePosition < 110) {
+        canCountPoint = true;
     }
 }, 10);
 

@@ -45,6 +45,15 @@
     animation: clouds-animation2 20s infinite linear;
 }
 
+.points {
+    position: absolute;
+    margin: 20px;
+    right: 0;
+    color: yellow;
+    font-family: fantasy;
+    font-size: 3rem;
+}
+
 .reload-buttom-form {
     position: absolute;
     top: 50%;
